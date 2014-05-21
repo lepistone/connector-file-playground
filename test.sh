@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-pwd
-HOME=`pwd`
+ADDONS_PATH=addons,web/addons,openerp-connector,`pwd`
+MODULES_UNDER_TEST=connector_file
+DBNAME=travis_ci_test
+OPTIONS=--addons-path=$ADDONS_PATH -i $MODULES_UNDER_TEST -d $DBNAME --stop-after-init
 cd ..
-ls
-server/openerp-server --stop-after-init --addons-path=addons,web/addons,$HOME -i connector_file -d travis_ci_test
-server/openerp-server --stop-after-init --addons-path=addons,web/addons,$HOME -i connector_file -d travis_ci_test --test-enable --log-level=test
+server/openerp-server $OPTIONS
+server/openerp-server $OPTIONS --test-enable --log-level=test
