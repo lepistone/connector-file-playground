@@ -12,4 +12,4 @@ rmdir tmp
 pwd
 ls
 cd openerp
-python setup.py install
+python setup.py --quiet install
