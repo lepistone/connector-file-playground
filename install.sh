@@ -1,3 +1,5 @@
+# /usr/bin/env bash
+
 set -e
 
 wget http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
