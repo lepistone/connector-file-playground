@@ -2,14 +2,10 @@
 
 set -e
 
-wget http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+cd ..
+git checkout --depth 1 -b ocb-7.0 git://github.com/akretion/openerp-server server
+git checkout --depth 1 -b ocb-7.0 git://github.com/akretion/openerp-addons addons
+git checkout --depth 1 -b ocb-7.0 git://github.com/akretion/openerp-web web
 
-mkdir tmp
-tar -xf openerp-7.0-latest.tar.gz -C tmp
-mv tmp/* ../openerp
-rmdir tmp
-
-pwd
-ls
-cd ../openerp
+cd server
 python setup.py --quiet install
