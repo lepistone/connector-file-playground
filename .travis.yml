@@ -10,7 +10,7 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
 install:
-  - http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+  - ./install.sh
 
 script:
-  - /test.sh
+  - ./test.sh
