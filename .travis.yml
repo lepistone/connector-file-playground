@@ -1,0 +1,13 @@
+language: python
+
+python:
+  - "2.7"
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+install:
+  - http://nightly.openerp.com/7.0/nightly/src/openerp-7.0-latest.tar.gz
+
+script:
+  - /test.sh
